@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerInput playerinput;
 
     #region Door
-    public DoorOpen doorOpen;
+    //public DoorOpen doorOpen;
 
     #endregion
 
@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(velocity * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
+       /* if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
         {
             Debug.Log("E pressed");
             StartCoroutine(doorOpen.OpenDoor());
@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(doorOpen.CloseDoor());
 
         }
-
+       */
 
 
     }
