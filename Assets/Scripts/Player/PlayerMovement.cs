@@ -23,6 +23,16 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerInput playerinput;
 
+    #region Flashlight Variables
+    public Light FlashLight;
+    public Animator batteryanimator;
+    public float countdown = 10;
+    public bool flashlightfull;
+    public bool flashlightdead;
+    public bool flashlight2bar;
+    public bool flashlight1bar;
+    #endregion
+
     #region Door
     //public DoorOpen doorOpen;
 
@@ -55,20 +65,74 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(velocity * Time.deltaTime);
 
-       /* if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
+        /* if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
+         {
+             Debug.Log("E pressed");
+             StartCoroutine(doorOpen.OpenDoor());
+         }
+         else if (Input.GetKeyDown(KeyCode.E) && doorOpen.dooropen == true)
+         {
+             Debug.Log("E pressed");
+             StartCoroutine(doorOpen.CloseDoor());
+
+         }
+        */
+
+
+
+
+
+        #region Flashlight
+        // Check for player input and toggle the flashlight...
+
+        if (Input.GetMouseButton(0))
         {
-            Debug.Log("E pressed");
-            StartCoroutine(doorOpen.OpenDoor());
+            ToggleFlashlight();
         }
-        else if (Input.GetKeyDown(KeyCode.E) && doorOpen.dooropen == true)
+        if (FlashLight.enabled == true)
         {
-            Debug.Log("E pressed");
-            StartCoroutine(doorOpen.CloseDoor());
+            countdown -= Time.deltaTime;
+            flashlightfull = true;
+            batteryanimator.SetBool("BatteryFull", true);
+            if (countdown <= 7 && countdown >=4)
+            {
+                flashlight2bar = true;  
+                flashlightfull = false;
+                batteryanimator.SetBool("BatteryFull", false);
+                batteryanimator.SetBool("Battery2Bar", true);
+            }
+            if (countdown <= 4 && countdown >= 0)
+            {
+                flashlight1bar = true;
+                flashlight2bar = false;
+                batteryanimator.SetBool("Battery2Bar", false);
+                batteryanimator.SetBool("Battery1Bar", true);
+            }
+            if (countdown <= 0)
+            {
+                flashlightdead = true;
+                flashlight1bar = false;
+                batteryanimator.SetBool("Battery1Bar", false);
+                batteryanimator.SetBool("BatteryEmpty", true);
+            }
 
         }
-       */
+        else if (FlashLight.enabled == false)
+        {
+            countdown = 10;
+        }
 
+        if (flashlightdead) 
+        { 
+          FlashLight.enabled = false;
+        
+        }
+        #endregion
 
+    }
+    private void ToggleFlashlight()
+    {
+        FlashLight.enabled = !FlashLight.enabled;
     }
 }
 
