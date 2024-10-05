@@ -41,9 +41,12 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
-
     }
-    
+    private void Start()
+    {
+        flashlightfull = true;
+        batteryanimator.SetBool("BatteryFull", true);
+    }
 
     private void Update()
     {
@@ -84,7 +87,11 @@ public class PlayerMovement : MonoBehaviour
 
         #region Flashlight
         // Check for player input and toggle the flashlight...
+        if (countdown >= 10)
+        {
+            countdown = 10;
 
+        }
         if (Input.GetMouseButton(0))
         {
             ToggleFlashlight();
@@ -92,40 +99,44 @@ public class PlayerMovement : MonoBehaviour
         if (FlashLight.enabled == true)
         {
             countdown -= Time.deltaTime;
-            flashlightfull = true;
-            batteryanimator.SetBool("BatteryFull", true);
-            if (countdown <= 7 && countdown >=4)
-            {
-                flashlight2bar = true;  
-                flashlightfull = false;
-                batteryanimator.SetBool("BatteryFull", false);
-                batteryanimator.SetBool("Battery2Bar", true);
-            }
-            if (countdown <= 4 && countdown >= 0)
-            {
-                flashlight1bar = true;
-                flashlight2bar = false;
-                batteryanimator.SetBool("Battery2Bar", false);
-                batteryanimator.SetBool("Battery1Bar", true);
-            }
-            if (countdown <= 0)
-            {
-                flashlightdead = true;
-                flashlight1bar = false;
-                batteryanimator.SetBool("Battery1Bar", false);
-                batteryanimator.SetBool("BatteryEmpty", true);
-            }
-
+          
         }
-        else if (FlashLight.enabled == false)
+        else if (FlashLight.enabled == false) 
         {
-            countdown = 10;
+            StartCoroutine(Cooldown());
+            IEnumerator Cooldown()
+            {
+                yield return new WaitForSeconds(4);
+                countdown += Time.deltaTime;
+            }
         }
-
-        if (flashlightdead) 
-        { 
-          FlashLight.enabled = false;
-        
+        if (countdown <= 7 && countdown >= 4)
+        {
+            flashlight2bar = true;
+            flashlightfull = false;
+            flashlight1bar = false;
+            batteryanimator.SetBool("BatteryFull", false);
+            batteryanimator.SetBool("Battery2Bar", true);
+            batteryanimator.SetBool("Battery1Bar", false);
+        }
+        if (countdown <= 4 && countdown >= 0)
+        {
+            flashlight1bar = true;
+            flashlight2bar = false;
+            flashlightdead = false;
+            batteryanimator.SetBool("Battery2Bar", false);
+            batteryanimator.SetBool("Battery1Bar", true);
+            batteryanimator.SetBool("BatteryEmpty", false);
+        }
+        if (countdown <= 0)
+        {
+            FlashLight.enabled = false;
+            flashlightdead = true;
+            flashlight1bar = false;
+            flashlight2bar = false;
+            batteryanimator.SetBool("Battery1Bar", false);
+            batteryanimator.SetBool("BatteryEmpty", true);
+            batteryanimator.SetBool("Battery2Bar", false);
         }
         #endregion
 
