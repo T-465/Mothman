@@ -50,6 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        #region PlayerMove
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
         if (isGrounded && velocity.y < 0)
@@ -67,6 +68,7 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         cc.Move(velocity * Time.deltaTime);
+        #endregion
 
         /* if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
          {
@@ -80,8 +82,6 @@ public class PlayerMovement : MonoBehaviour
 
          }
         */
-
-
 
 
 
