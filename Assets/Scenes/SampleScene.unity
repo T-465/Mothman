@@ -303,7 +303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9163155dd7eea454eb87ee81c063f549, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   gravity: -9.81
   groundCheck: {fileID: 1489332991}
   groundDistance: 0.4
