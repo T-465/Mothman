@@ -110,6 +110,16 @@ public class PlayerMovement : MonoBehaviour
                 countdown += Time.deltaTime;
             }
         }
+        if (countdown >= 9)
+        {
+            flashlight2bar = false;
+            flashlightfull = true;
+            
+            batteryanimator.SetBool("BatteryFull", true);
+            batteryanimator.SetBool("Battery2Bar", false);
+         
+        }
+
         if (countdown <= 7 && countdown >= 4)
         {
             flashlight2bar = true;
