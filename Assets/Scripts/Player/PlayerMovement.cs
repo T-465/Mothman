@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] public float playerHealth = 3;
     [SerializeField] public float speed;
     [SerializeField] private float gravity = -9.81f;
 
