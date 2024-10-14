@@ -25,6 +25,7 @@ public class PlayerMovement : MonoBehaviour
     public PlayerInput playerinput;
 
     #region Flashlight Variables
+    public GameObject volumebeam;
     public Light FlashLight;
     public Animator batteryanimator;
     public float countdown = 10;
@@ -95,15 +96,17 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
+              
             ToggleFlashlight();
         }
         if (FlashLight.enabled == true)
         {
             countdown -= Time.deltaTime;
-          
+            volumebeam.SetActive(true);
         }
         else if (FlashLight.enabled == false) 
         {
+            volumebeam.SetActive(false);
             StartCoroutine(Cooldown());
             IEnumerator Cooldown()
             {
@@ -154,6 +157,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void ToggleFlashlight()
     {
+
         FlashLight.enabled = !FlashLight.enabled;
     }
 }
