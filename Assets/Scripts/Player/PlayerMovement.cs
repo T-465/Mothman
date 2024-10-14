@@ -144,6 +144,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if (countdown <= 0)
         {
+            volumebeam.SetActive(false);
             FlashLight.enabled = false;
             flashlightdead = true;
             flashlight1bar = false;
