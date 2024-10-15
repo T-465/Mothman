@@ -35,10 +35,6 @@ public class PlayerMovement : MonoBehaviour
     public bool flashlight1bar;
     #endregion
 
-    #region Door
-    //public DoorOpen doorOpen;
-
-    #endregion
 
     private void Awake()
     {
@@ -71,20 +67,6 @@ public class PlayerMovement : MonoBehaviour
 
         cc.Move(velocity * Time.deltaTime);
         #endregion
-
-        /* if (Input.GetKeyDown(KeyCode.E) && doorOpen.doorclosed == true)
-         {
-             Debug.Log("E pressed");
-             StartCoroutine(doorOpen.OpenDoor());
-         }
-         else if (Input.GetKeyDown(KeyCode.E) && doorOpen.dooropen == true)
-         {
-             Debug.Log("E pressed");
-             StartCoroutine(doorOpen.CloseDoor());
-
-         }
-        */
-
 
 
         #region Flashlight
