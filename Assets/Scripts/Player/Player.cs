@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ISwitchable
 {
     [SerializeField] public float playerHealth = 3;
     [SerializeField] public float speed;
@@ -70,7 +70,7 @@ public class Player : MonoBehaviour
 
 
         #region Flashlight
-        // Check for player input and toggle the flashlight...
+        // Check for player input and toggle the flashlight
         if (countdown >= 10)
         {
             countdown = 10;
@@ -78,7 +78,7 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButton(0))
         {
-              
+            
             ToggleFlashlight();
         }
         if (FlashLight.enabled == true)
@@ -138,7 +138,7 @@ public class Player : MonoBehaviour
         #endregion
 
     }
-    private void ToggleFlashlight()
+    public void ToggleFlashlight()
     {
 
         FlashLight.enabled = !FlashLight.enabled;
