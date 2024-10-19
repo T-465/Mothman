@@ -137,6 +137,7 @@ GameObject:
   - component: {fileID: 229541683}
   - component: {fileID: 229541682}
   - component: {fileID: 229541681}
+  - component: {fileID: 229541685}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -312,6 +313,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   cc: {fileID: 229541682}
+  playerinput: {fileID: 229541683}
+--- !u!114 &229541685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 229541676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e73f71021b6269e42a036db01960d90c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   playerinput: {fileID: 229541683}
   volumebeam: {fileID: 1273568899}
   FlashLight: {fileID: 1855822985}
@@ -687,7 +701,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 1000
   playerBody: {fileID: 229541680}
-  playerMovement: {fileID: 229541684}
+  player: {fileID: 0}
 --- !u!1 &592654800
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ISwitchable
 {
-      void ToggleFlashlight();
+      void Toggle();
 
 
 }
