@@ -1,0 +1,11 @@
+Model Information:
+* title:	Mothman - GTA San Andreas CLEO Myths Character
+* source:	https://sketchfab.com/3d-models/mothman-gta-san-andreas-cleo-myths-character-c1d52a45f7bc46e49567ce19fc5afa5e
+* author:	ShaxerTakkuY (https://sketchfab.com/ShaxerTakkuY)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Mothman - GTA San Andreas CLEO Myths Character" (https://sketchfab.com/3d-models/mothman-gta-san-andreas-cleo-myths-character-c1d52a45f7bc46e49567ce19fc5afa5e) by ShaxerTakkuY (https://sketchfab.com/ShaxerTakkuY) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

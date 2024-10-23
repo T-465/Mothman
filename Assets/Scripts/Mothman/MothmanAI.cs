@@ -23,7 +23,6 @@ public class MothmanAI : MonoBehaviour
     //The player's health
     public float playerHealth = 100;
 
-
     //The player's Transform
     public Transform player;
 
