@@ -11,6 +11,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
     public Light FlashLight;
     public Animator batteryanimator;
     public float countdown = 10;
+    public bool flashlighton;
     public bool flashlightfull;
     public bool flashlightdead;
     public bool flashlight2bar;
@@ -24,7 +25,14 @@ public class Flashlight : MonoBehaviour, ISwitchable
 
     public void Update()
     {
-
+        if (FlashLight.enabled == true)
+        {
+            flashlighton = true;
+        }
+        else
+        {
+            flashlighton = false;
+        }
 
         #region Flashlight
         // Check for player input and toggle the flashlight
@@ -95,7 +103,6 @@ public class Flashlight : MonoBehaviour, ISwitchable
     }
     public void Toggle()
     {
- 
       FlashLight.enabled = !FlashLight.enabled;
     }
 }
