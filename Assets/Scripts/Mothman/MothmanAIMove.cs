@@ -42,9 +42,9 @@ public class MothmanAIMove : MonoBehaviour
         //check for attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
-       if (!playerInAttackRange && flashlight.flashlighton) Teleporting();
-        if (!playerInAttackRange && !flashlight.flashlighton) Moving();
-        if (playerInAttackRange) Attack();
+       if (!playerInAttackRange && !flashlight.flashlighton) Teleporting();
+       if (!playerInAttackRange && flashlight.flashlighton) Moving();
+       if (playerInAttackRange) Attack();
     }
 
 
