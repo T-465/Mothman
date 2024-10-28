@@ -30,6 +30,7 @@ public class MothmanAIMove : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+       
     }
     private void OnDrawGizmosSelected()
     {
@@ -50,12 +51,13 @@ public class MothmanAIMove : MonoBehaviour
 
     private void Teleporting()
     {
-
+        transform.LookAt(player);
 
 
     }
     private void Moving()
     {
+        transform.LookAt(player);
         agent.SetDestination(player.position);
 
     }
