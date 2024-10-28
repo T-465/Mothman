@@ -15,6 +15,8 @@ public class MothmanAIMove : MonoBehaviour
     public Player playerScript;
     public bool playerDead;
 
+   
+
     //Teleporting
 
 
@@ -40,6 +42,7 @@ public class MothmanAIMove : MonoBehaviour
 
     private void Update()
     {
+       
         //check for attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
 
