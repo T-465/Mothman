@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 108036109}
   m_Layer: 6
-  m_Name: TeleFar3
+  m_Name: Tele3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -147,7 +147,7 @@ Transform:
   m_GameObject: {fileID: 108036108}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: 0, z: -69.6}
+  m_LocalPosition: {x: -2.1, y: 0, z: -57.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -211,6 +211,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.02
+      objectReference: {fileID: 0}
     - target: {fileID: 516192091743312017, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
       propertyPath: m_Name
@@ -223,9 +228,34 @@ PrefabInstance:
       objectReference: {fileID: 832575518}
     - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
+      propertyPath: Tele1
+      value: 
+      objectReference: {fileID: 710135283}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: Tele2
+      value: 
+      objectReference: {fileID: 1060484831}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: Tele3
+      value: 
+      objectReference: {fileID: 108036109}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: Tele4
+      value: 
+      objectReference: {fileID: 1399625625}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 229541680}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: mothMan
+      value: 
+      objectReference: {fileID: 313042583}
     - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
       propertyPath: flashlight
@@ -337,7 +367,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1464909046}
   - {fileID: 1825030555}
   - {fileID: 1489332991}
   m_Father: {fileID: 0}
@@ -630,6 +659,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 296335088}
   m_CullTransparentMesh: 1
+--- !u!4 &313042583 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 407483039390763418, guid: 8a0bf3621229edf478d6d28c16fa825d,
+    type: 3}
+  m_PrefabInstance: {fileID: 206271475}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -799,7 +834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 710135283}
   m_Layer: 6
-  m_Name: TeleFar1
+  m_Name: Tele1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1355,7 +1390,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1060484831}
   m_Layer: 6
-  m_Name: TeleFar2
+  m_Name: Tele2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1370,7 +1405,7 @@ Transform:
   m_GameObject: {fileID: 1060484830}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.3, y: 0, z: 28.8}
+  m_LocalPosition: {x: 31.5, y: 0, z: 28.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1605,6 +1640,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 948260207}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1399625624
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399625625}
+  m_Layer: 6
+  m_Name: Tele4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1399625625
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399625624}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -43.3, y: 0, z: 7.3}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1464909046}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1464909045
 GameObject:
   m_ObjectHideFlags: 0
@@ -1615,7 +1681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1464909046}
   m_Layer: 6
-  m_Name: Teleport Far
+  m_Name: Teleport Areas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1629,15 +1695,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1464909045}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1842.61, y: 4.3, z: -164.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 710135283}
   - {fileID: 1060484831}
   - {fileID: 108036109}
-  m_Father: {fileID: 229541680}
+  - {fileID: 1399625625}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1475705585
 GameObject:
@@ -2284,3 +2351,4 @@ SceneRoots:
   - {fileID: 1023036812}
   - {fileID: 206271475}
   - {fileID: 2048660957}
+  - {fileID: 1464909046}

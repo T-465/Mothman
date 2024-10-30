@@ -23,10 +23,17 @@ public class MothmanAIMove : MonoBehaviour
     public Volume vol;
     private ChromaticAberration ca;
     public float currentChromaticAb = 0.43f;
-    public float targetChromaticAb = 0.7f;
+    public float targetChromaticAb = 1.0f;
     #endregion
 
-    //Teleporting
+    #region Teleporting
+    public bool teleporting;
+    public Transform mothMan;
+    public Transform Tele1;
+    public Transform Tele2;
+    public Transform Tele3;
+    public Transform Tele4;
+    #endregion
 
 
     //Attacking
@@ -69,19 +76,36 @@ public class MothmanAIMove : MonoBehaviour
 
     private void Teleporting()
     {
+        teleporting = true;
         transform.LookAt(player);
         ca.intensity.Override(currentChromaticAb);
+        StartCoroutine(Teleporter());
+
+         IEnumerator Teleporter()
+         {
+            mothMan.transform.position = Tele1.transform.position;
+            yield return new WaitForSeconds(4f);
+            mothMan.transform.position = Tele2.transform.position;
+            yield return new WaitForSeconds(4f);
+            mothMan.transform.position = Tele3.transform.position;
+            yield return new WaitForSeconds(4f);
+            mothMan.transform.position = Tele4.transform.position;
+         } 
+        
+        
 
     }
     private void Moving()
     {
+        StopAllCoroutines();    
+        teleporting = false;
         transform.LookAt(player);
         agent.SetDestination(player.position);
         ca.intensity.Override(targetChromaticAb);
     }
     private void Attack()
     {
-        //jumpScareImg.enabled = true;
+        jumpScareImg.enabled = true;
        
 
         if (!alreadyAttacked)
