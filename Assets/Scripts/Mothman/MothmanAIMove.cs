@@ -88,7 +88,6 @@ public class MothmanAIMove : MonoBehaviour
         transform.LookAt(player);
         ca.intensity.Override(currentChromaticAb);
 
-        
 
         if (teleporting)
         {
