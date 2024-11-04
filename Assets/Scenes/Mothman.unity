@@ -213,13 +213,73 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
+      propertyPath: m_Height
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
       propertyPath: m_Radius
       value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_AutoRepath
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_AutoTraverseOffMeshLink
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 516192091743312017, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
       propertyPath: m_Name
       value: Mothman Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 516192091743312017, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 517270651285887134, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Height
+      value: 0.027917014
+      objectReference: {fileID: 0}
+    - target: {fileID: 517270651285887134, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.004022418
+      objectReference: {fileID: 0}
+    - target: {fileID: 517270651285887134, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Center.x
+      value: -0.00013845331
+      objectReference: {fileID: 0}
+    - target: {fileID: 517270651285887134, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.001299883
+      objectReference: {fileID: 0}
+    - target: {fileID: 1190549912105638789, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0020140836
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759963127454245814, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_Drag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759963127454245814, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
@@ -263,6 +323,11 @@ PrefabInstance:
       objectReference: {fileID: 313042583}
     - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
       propertyPath: flashlight
       value: 
       objectReference: {fileID: 229541685}
@@ -280,6 +345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timeBetweenAtacks
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7859625099472879606, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.00235
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

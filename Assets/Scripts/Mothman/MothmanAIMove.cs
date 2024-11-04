@@ -86,6 +86,7 @@ public class MothmanAIMove : MonoBehaviour
       
         teleporting = true;
         transform.LookAt(player);
+        agent.speed = 1;
         ca.intensity.Override(currentChromaticAb);
 
 
@@ -97,6 +98,7 @@ public class MothmanAIMove : MonoBehaviour
     }
     private void Moving()
     {
+        agent.speed = 20;
         teleporting = false;
         transform.LookAt(player);
         agent.SetDestination(player.position);
