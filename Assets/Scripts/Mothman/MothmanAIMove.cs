@@ -51,7 +51,12 @@ public class MothmanAIMove : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         jumpScareImg.enabled = false;
         vol.profile.TryGet<ChromaticAberration>(out ca);
-        
+
+
+        Tele1 = null;
+        Tele2 = null;
+        Tele3 = null;
+        Tele4 = null;
 
     }
     private void OnDrawGizmosSelected()
@@ -60,8 +65,20 @@ public class MothmanAIMove : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, attackRange);
     }
 
-    private void Update()
+    public void Update()
     {
+        if (Tele1 == null)
+            Tele1 = GameObject.FindWithTag("Tele1").transform;
+        
+        if (Tele2 == null)
+            Tele2 = GameObject.FindWithTag("Tele2").transform;
+        
+        if (Tele3 == null)
+            Tele3 = GameObject.FindWithTag("Tele3").transform;
+       
+        if (Tele4 == null)
+            Tele4 = GameObject.FindWithTag("Tele4").transform;
+        
        
         //check for attack range
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
@@ -72,22 +89,28 @@ public class MothmanAIMove : MonoBehaviour
        {
             Teleporting();
        }
+        if (teleporting == false)teleportcoroutinework = false; StopCoroutine(Teleporter());
+        
 
        if (!playerInAttackRange && flashlight.flashlighton) Moving();
        if (playerInAttackRange) Attack();
 
- 
+      
+
+
+
     }
 
    
 
     private void Teleporting()
     {
-      
+        Debug.Log("Teleporting");
         teleporting = true;
         transform.LookAt(player);
-        agent.speed = 1;
-        ca.intensity.Override(currentChromaticAb);
+        agent.speed = 0.5f;
+        
+        //ca.intensity.Override(currentChromaticAb);
 
 
         if (teleporting)
@@ -98,11 +121,13 @@ public class MothmanAIMove : MonoBehaviour
     }
     private void Moving()
     {
+        Debug.Log("Moving");
         agent.speed = 20;
+      
         teleporting = false;
         transform.LookAt(player);
         agent.SetDestination(player.position);
-        ca.intensity.Override(targetChromaticAb);
+        //ca.intensity.Override(targetChromaticAb);
     }
     private void Attack()
     {
@@ -144,7 +169,7 @@ public class MothmanAIMove : MonoBehaviour
    
         yield return new WaitForSeconds(2f);
         mothMan.transform.position = Tele4.transform.position;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         teleportcoroutinework = false;  
     }
 

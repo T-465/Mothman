@@ -50,7 +50,7 @@ public class Player : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
 
-        cc.Move(velocity * Time.deltaTime);
+       
         #endregion
 
 
