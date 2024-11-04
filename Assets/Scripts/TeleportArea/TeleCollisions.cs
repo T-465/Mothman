@@ -26,8 +26,7 @@ public class TeleCollisions : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
 
-        //if (other == player)
-       // {
+       
             Debug.Log("telespots");
             telespots.SetActive(true);
 
@@ -35,14 +34,12 @@ public class TeleCollisions : MonoBehaviour
             tele2 = GameObject.FindWithTag("Tele2");
             tele3 = GameObject.FindWithTag("Tele3");
             tele4 = GameObject.FindWithTag("Tele4");
-      //  }
+   
         mothMan.SetActive(true);
     }
     public void OnTriggerExit(Collider other)
     {
-        if (other == player)
-        {
-            
+      
             telespots.SetActive(false);
 
             tele1 = null;
@@ -50,7 +47,7 @@ public class TeleCollisions : MonoBehaviour
             tele3 = null;
             tele4 = null;
             
-        }
+        
     }
 
 

@@ -36,9 +36,9 @@ public class Flashlight : MonoBehaviour, ISwitchable
 
         #region Flashlight
         // Check for player input and toggle the flashlight
-        if (countdown >= 10)
+        if (countdown >= 15)
         {
-            countdown = 10;
+            countdown = 15;
 
         }
         if (Input.GetMouseButton(0))
@@ -60,7 +60,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
                 countdown += Time.deltaTime;
             }
         }
-        if (countdown >= 9)
+        if (countdown >= 11)
         {
             flashlight2bar = false;
             flashlightfull = true;
@@ -70,7 +70,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
 
         }
 
-        if (countdown <= 7 && countdown >= 4)
+        if (countdown <= 8 && countdown >= 5)
         {
             flashlight2bar = true;
             flashlightfull = false;
@@ -79,7 +79,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
             batteryanimator.SetBool("Battery2Bar", true);
             batteryanimator.SetBool("Battery1Bar", false);
         }
-        if (countdown <= 4 && countdown >= 0)
+        if (countdown <= 5 && countdown >= 0)
         {
             flashlight1bar = true;
             flashlight2bar = false;
