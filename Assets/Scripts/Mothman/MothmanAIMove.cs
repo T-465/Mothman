@@ -37,6 +37,12 @@ public class MothmanAIMove : MonoBehaviour
     #endregion
 
 
+    #region Audio
+    public AudioSource MothAttack;
+    public AudioSource MothAttack2;
+    #endregion
+
+
     //Attacking
     public float timeBetweenAtacks;
     bool alreadyAttacked;
@@ -121,6 +127,7 @@ public class MothmanAIMove : MonoBehaviour
     }
     private void Moving()
     {
+
         Debug.Log("Moving");
         agent.speed = 20;
       
@@ -131,8 +138,10 @@ public class MothmanAIMove : MonoBehaviour
     }
     private void Attack()
     {
+        MothAttack.Play();
+        MothAttack2.Play();
         jumpScareImg.enabled = true;
-       
+      
 
         if (!alreadyAttacked)
         {
@@ -148,6 +157,8 @@ public class MothmanAIMove : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+
+     
         playerScript.playerHealth -= damage;
         if (playerScript.playerHealth <= 0) Invoke(nameof(Death), .5f);
     }

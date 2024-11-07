@@ -17,6 +17,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
     public bool flashlight2bar;
     public bool flashlight1bar;
 
+    public AudioSource click;
     private void Start()
     {
         flashlightfull = true;
@@ -103,6 +104,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
     }
     public void Toggle()
     {
+        click.Play();
       FlashLight.enabled = !FlashLight.enabled;
     }
 }
