@@ -46,6 +46,7 @@ public class MothmanAIMove : MonoBehaviour
     //Attacking
     public float timeBetweenAtacks;
     bool alreadyAttacked;
+    public float distance;
 
     //States
     public float attackRange;
@@ -103,8 +104,16 @@ public class MothmanAIMove : MonoBehaviour
 
       
 
+        
+         distance = Vector3.Distance(player.position, transform.position);
 
 
+        if (distance < 40f && distance > 39.5f && !teleporting)
+        {
+            Debug.Log("playsounds");
+            MothAttack.Play();
+            MothAttack2.Play();
+        }
     }
 
    
@@ -125,6 +134,7 @@ public class MothmanAIMove : MonoBehaviour
         }
         
     }
+ 
     private void Moving()
     {
 
@@ -135,11 +145,13 @@ public class MothmanAIMove : MonoBehaviour
         transform.LookAt(player);
         agent.SetDestination(player.position);
         //ca.intensity.Override(targetChromaticAb);
+     
+
+     
     }
     private void Attack()
     {
-        MothAttack.Play();
-        MothAttack2.Play();
+      
         jumpScareImg.enabled = true;
       
 
@@ -158,7 +170,6 @@ public class MothmanAIMove : MonoBehaviour
     public void TakeDamage(int damage)
     {
 
-     
         playerScript.playerHealth -= damage;
         if (playerScript.playerHealth <= 0) Invoke(nameof(Death), .5f);
     }
