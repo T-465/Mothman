@@ -39,15 +39,14 @@ public class TeleCollisions : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
-      
-            telespots.SetActive(false);
+        tele1 = null;
+        tele2 = null;
+        tele3 = null;
+        tele4 = null;
+        telespots.SetActive(false);
 
-            tele1 = null;
-            tele2 = null;
-            tele3 = null;
-            tele4 = null;
-            
-        
+        mothMan.SetActive(false);
+
     }
 
 

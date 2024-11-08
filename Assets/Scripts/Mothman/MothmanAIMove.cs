@@ -66,6 +66,21 @@ public class MothmanAIMove : MonoBehaviour
         Tele4 = null;
 
     }
+    private void OnEnable()
+    {
+        Tele1 = GameObject.FindWithTag("Tele1").transform;
+        Tele2 = GameObject.FindWithTag("Tele2").transform;
+        Tele3 = GameObject.FindWithTag("Tele3").transform;
+        Tele4 = GameObject.FindWithTag("Tele4").transform;
+        Teleporting();
+    }
+    private void OnDisable()
+    {
+        Tele1 = null;
+        Tele2 = null;
+        Tele3 = null;
+        Tele4 = null;
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
@@ -108,7 +123,7 @@ public class MothmanAIMove : MonoBehaviour
          distance = Vector3.Distance(player.position, transform.position);
 
 
-        if (distance < 40f && distance > 39.5f && !teleporting)
+        if (distance < 40f && distance > 39.2f && !teleporting)
         {
             Debug.Log("playsounds");
             MothAttack.Play();
@@ -116,7 +131,7 @@ public class MothmanAIMove : MonoBehaviour
         }
     }
 
-   
+
 
     private void Teleporting()
     {
