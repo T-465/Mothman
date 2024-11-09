@@ -187,9 +187,17 @@ public class MothmanAIMove : MonoBehaviour
             Debug.Log("playsounds");
             Jumpscare1.Play();
             Jumpscare2.Play();
+        StartCoroutine(Jumpscare());
+
+       IEnumerator Jumpscare()
+        {
+            jumpScareImg.enabled = true;
+            yield return new WaitForSeconds(1);
+                jumpScareImg.enabled = false;
+       }
+           
         
-        jumpScareImg.enabled = true;
-      
+   
 
         if (!alreadyAttacked)
         {
@@ -201,7 +209,7 @@ public class MothmanAIMove : MonoBehaviour
     private void ResetAttack()
     {
         alreadyAttacked = false;
-        jumpScareImg.enabled = false;
+        Teleporting();
     }
     public void TakeDamage(int damage)
     {

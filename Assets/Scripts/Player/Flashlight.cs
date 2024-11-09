@@ -42,7 +42,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
             countdown = 15;
 
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Toggle();
         }
@@ -104,7 +104,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
     }
     public void Toggle()
     {
-        click.Play();
+      click.Play();
       FlashLight.enabled = !FlashLight.enabled;
     }
 }

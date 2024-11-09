@@ -1,0 +1,11 @@
+Model Information:
+* title:	Open Book Paper Pieces untextured
+* source:	https://sketchfab.com/3d-models/open-book-paper-pieces-untextured-cde0666c7ba64af6b81676baecbc0b90
+* author:	Vicki Lau (https://sketchfab.com/vickicup)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Open Book Paper Pieces untextured" (https://sketchfab.com/3d-models/open-book-paper-pieces-untextured-cde0666c7ba64af6b81676baecbc0b90) by Vicki Lau (https://sketchfab.com/vickicup) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
