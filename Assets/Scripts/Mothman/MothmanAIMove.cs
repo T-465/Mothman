@@ -169,7 +169,7 @@ public class MothmanAIMove : MonoBehaviour
  
     private void Moving()
     {
-
+        StopCoroutine(Teleporter());
         Debug.Log("Moving");
         agent.speed = 20;
       
@@ -193,7 +193,7 @@ public class MothmanAIMove : MonoBehaviour
         {
             jumpScareImg.enabled = true;
             yield return new WaitForSeconds(1);
-                jumpScareImg.enabled = false;
+            jumpScareImg.enabled = false;
        }
            
         
@@ -227,13 +227,13 @@ public class MothmanAIMove : MonoBehaviour
         teleportcoroutinework = true;
         mothMan.transform.position = Tele1.transform.position;
     
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         mothMan.transform.position = Tele2.transform.position;
      
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(4f);
         mothMan.transform.position = Tele3.transform.position;
    
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(4f);
         mothMan.transform.position = Tele4.transform.position;
         yield return new WaitForSeconds(3f);
         teleportcoroutinework = false;  
