@@ -11,6 +11,7 @@ public class MothmanAIMove : MonoBehaviour
    public NavMeshAgent agent;
 
     public Transform player;
+   // public CameraShake cameraShake;
 
     public LayerMask whatIsGround, whatIsPlayer;
 
@@ -132,6 +133,11 @@ public class MothmanAIMove : MonoBehaviour
             Debug.Log("playsounds");
             MothAttack.Play();
             MothAttack2.Play();
+           // cameraShake.CameraShaker();
+        }
+        else
+        {
+           // cameraShake.StopShake();
         }
         if (distance > 80f && distance < 81f && teleporting)
         {
