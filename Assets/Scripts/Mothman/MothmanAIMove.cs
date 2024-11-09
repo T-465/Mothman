@@ -40,6 +40,10 @@ public class MothmanAIMove : MonoBehaviour
     #region Audio
     public AudioSource MothAttack;
     public AudioSource MothAttack2;
+    public AudioSource MothDirectional;
+    public AudioSource MothDirectional2;
+    public AudioSource Jumpscare1;
+    public AudioSource Jumpscare2;
     #endregion
 
 
@@ -123,12 +127,25 @@ public class MothmanAIMove : MonoBehaviour
          distance = Vector3.Distance(player.position, transform.position);
 
 
-        if (distance < 40f && distance > 39.2f && !teleporting)
+        if (distance < 40f && distance > 39.5f && !teleporting)
         {
             Debug.Log("playsounds");
             MothAttack.Play();
             MothAttack2.Play();
         }
+        if (distance > 80f && distance < 81f && teleporting)
+        {
+            Debug.Log("playtelesound1");
+            MothDirectional.Play();
+            
+        }
+        if (distance > 65f && distance < 66f && teleporting)
+        {
+            Debug.Log("playtelesound2");
+       
+            MothDirectional2.Play();
+        }
+       
     }
 
 
@@ -166,7 +183,11 @@ public class MothmanAIMove : MonoBehaviour
     }
     private void Attack()
     {
-      
+       
+            Debug.Log("playsounds");
+            Jumpscare1.Play();
+            Jumpscare2.Play();
+        
         jumpScareImg.enabled = true;
       
 
