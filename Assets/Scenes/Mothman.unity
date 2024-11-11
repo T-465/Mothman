@@ -1990,6 +1990,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600698849}
+  - component: {fileID: 600698850}
   m_Layer: 0
   m_Name: Lamp (2)
   m_TagString: Untagged
@@ -2015,6 +2016,29 @@ Transform:
   - {fileID: 1487750895}
   m_Father: {fileID: 1604372610}
   m_LocalEulerAnglesHint: {x: -3.076, y: -350.625, z: 3.155}
+--- !u!136 &600698850
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600698848}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.009832158
+  m_Height: 0.12668367
+  m_Direction: 1
+  m_Center: {x: -0.030328728, y: -0.030574672, z: 0.03844481}
 --- !u!1 &643825772
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,6 +2393,7 @@ GameObject:
   - component: {fileID: 760351856}
   - component: {fileID: 760351858}
   - component: {fileID: 760351857}
+  - component: {fileID: 760351859}
   m_Layer: 0
   m_Name: polySurface368_Streetlight_0
   m_TagString: Untagged
@@ -2441,6 +2466,29 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 760351855}
   m_Mesh: {fileID: 4300000, guid: 6a427367ffab9e448a9fd5435cd023ba, type: 2}
+--- !u!136 &760351859
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 760351855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.9642727
+  m_Height: 12.531889
+  m_Direction: 1
+  m_Center: {x: 9.4337845, y: 6.1302686, z: 4.88389}
 --- !u!1 &787614731
 GameObject:
   m_ObjectHideFlags: 0

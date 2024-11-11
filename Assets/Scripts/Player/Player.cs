@@ -38,10 +38,16 @@ public class Player : MonoBehaviour
 
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
 
+        velocity.y += gravity * Time.deltaTime;
+
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0f;
         }
+       if (!isGrounded)
+       {
+            velocity.y += -30f;
+       }
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
@@ -50,8 +56,7 @@ public class Player : MonoBehaviour
 
         cc.Move(move * speed * Time.deltaTime);
 
-        velocity.y += gravity * Time.deltaTime;
-
+      
        
         #endregion
 
