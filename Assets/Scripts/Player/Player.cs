@@ -11,15 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] public float speed;
     [SerializeField] private float gravity = -9.81f;
 
-    public Transform groundCheck;
-    public float groundDistance = 0.4f;
-    public LayerMask groundMask;
 
-
-    Vector3 velocity;
-    bool isGrounded;
-
-    private Vector3 movement;
+ 
     public CharacterController cc;
 
     public PlayerInput playerinput;
@@ -29,32 +22,18 @@ public class Player : MonoBehaviour
     {
         cc = GetComponent<CharacterController>();
     }
-
-
     private void Update()
     {
         #region PlayerMove
 
 
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
-
-        velocity.y += gravity * Time.deltaTime;
-
-        if (isGrounded && velocity.y < 0)
-        {
-            velocity.y = 0f;
-        }
-       if (!isGrounded)
-       {
-            velocity.y += -30f;
-       }
-
+       
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
         Vector3 move = transform.right * x + transform.forward * z;
 
-        cc.Move(move * speed * Time.deltaTime);
+        cc.SimpleMove(move * speed * Time.deltaTime);
 
       
        
