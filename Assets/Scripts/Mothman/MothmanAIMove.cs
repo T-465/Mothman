@@ -116,7 +116,7 @@ public class MothmanAIMove : MonoBehaviour
        {
             Teleporting();
        }
-        if (teleporting == false)teleportcoroutinework = false; StopCoroutine(Teleporter());
+       if (!teleporting) teleportcoroutinework = false; StopCoroutine(Teleporter());
         
 
        if (!playerInAttackRange && flashlight.flashlighton) Moving();
@@ -128,7 +128,7 @@ public class MothmanAIMove : MonoBehaviour
          distance = Vector3.Distance(player.position, transform.position);
 
 
-        if (distance < 40f && distance > 39.5f && !teleporting)
+        if (distance < 30f && distance > 29.8f && !teleporting)
         {
             Debug.Log("playsounds");
             MothAttack.Play();
@@ -139,13 +139,13 @@ public class MothmanAIMove : MonoBehaviour
         {
            // cameraShake.StopShake();
         }
-        if (distance > 80f && distance < 81f && teleporting)
+        if (distance > 80f && distance < 80.2f && teleporting)
         {
             Debug.Log("playtelesound1");
             MothDirectional.Play();
             
         }
-        if (distance > 65f && distance < 66f && teleporting)
+        if (distance > 65f && distance < 65.2f && teleporting)
         {
             Debug.Log("playtelesound2");
        
@@ -177,7 +177,7 @@ public class MothmanAIMove : MonoBehaviour
     {
         StopCoroutine(Teleporter());
         Debug.Log("Moving");
-        agent.speed = 20;
+        agent.speed = 25;
       
         teleporting = false;
         transform.LookAt(player);

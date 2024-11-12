@@ -9,10 +9,7 @@ public class Player : MonoBehaviour
 {
     [SerializeField] public float playerHealth = 3;
     [SerializeField] public float speed;
-    [SerializeField] private float gravity = -9.81f;
 
-
- 
     public CharacterController cc;
 
     public PlayerInput playerinput;

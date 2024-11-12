@@ -13,20 +13,17 @@ public class TeleCollisions : MonoBehaviour
     public GameObject tele3;
     public GameObject tele4;
 
- 
     private void Start()
     {
         player = GameObject.FindWithTag("Player");
         mothMan.SetActive(false);
         telespots.SetActive(false);
-        
     }
 
 
     public void OnTriggerEnter(Collider other)
     {
 
-       
             Debug.Log("telespots");
             telespots.SetActive(true);
 
@@ -46,7 +43,6 @@ public class TeleCollisions : MonoBehaviour
         telespots.SetActive(false);
 
         mothMan.SetActive(false);
-
     }
 
 
