@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Jeep
+* source:	https://sketchfab.com/3d-models/low-poly-jeep-56a38fa3e87a4dbd8eced333ca01986e
+* author:	IEssien (https://sketchfab.com/IEssien)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Jeep" (https://sketchfab.com/3d-models/low-poly-jeep-56a38fa3e87a4dbd8eced333ca01986e) by IEssien (https://sketchfab.com/IEssien) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
