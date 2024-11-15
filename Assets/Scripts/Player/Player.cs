@@ -5,9 +5,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
-    [SerializeField] public float playerHealth = 3;
+    [SerializeField] public int playerHealth = 3;
     [SerializeField] public float speed;
 
     public CharacterController cc;
@@ -32,11 +32,25 @@ public class Player : MonoBehaviour
 
         cc.SimpleMove(move * speed * Time.deltaTime);
 
-      
-       
+
+
         #endregion
 
+        #region Damage
 
+        #endregion
+    }
+    public void TakeDamage(int damage)
+    {
+        playerHealth -= damage;
+        if (playerHealth <= 0)
+        {
+            Destroy(gameObject); // Destroy crate when health reaches 0
+        }
+    }
+    public void ShowHitEffect()
+    {
+       
     }
 }
 

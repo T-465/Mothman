@@ -348,8 +348,8 @@ public class AudioManager : MonoBehaviour
     // Event Method - Play ambient by track number or name with optional volume and loop settings - calls appropriate overload based on parameters
     public void PlayAmbientAudio(Transform attachTo, int trackNumber, string trackName, float volume, float pitch, float spatialBlend, FadeType fadeType, float fadeDuration, bool loop, string eventName)
     {
-        AudioEventManager.PlayAmbientAudio(this.transform, 0, "ForestAmbience", 0.5f, 1.0f, 1.0f, FadeType.Crossfade,
-        1.0f, true, "ForestAmbience");
+        AudioEventManager.PlayAmbientAudio(this.transform, 0, "AMBIENCE_Forest", 0.5f, 1.0f, 1.0f, FadeType.Crossfade,
+        1.0f, true, "AMBIENCE_Forest");
 
         if (isFadingAmbientAudio) return; // Block if a fade/crossfade is already in progress
 

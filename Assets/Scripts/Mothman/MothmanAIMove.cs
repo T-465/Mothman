@@ -52,18 +52,18 @@ public class MothmanAIMove : MonoBehaviour
     public float timeBetweenAtacks;
     bool alreadyAttacked;
     public float distance;
-
+    public int damage = 1;
     //States
     public float attackRange;
     public bool playerInAttackRange;
 
-    private void Awake()
+    public void Awake()
     {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         jumpScareImg.enabled = false;
         vol.profile.TryGet<ChromaticAberration>(out ca);
-
+        IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
 
         Tele1 = null;
         Tele2 = null;
@@ -196,7 +196,10 @@ public class MothmanAIMove : MonoBehaviour
         StartCoroutine(Jumpscare());
 
        IEnumerator Jumpscare()
-        {
+       {
+            IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
+            damageable.TakeDamage(damage);
+            damageable.ShowHitEffect();
             jumpScareImg.enabled = true;
             yield return new WaitForSeconds(1);
             jumpScareImg.enabled = false;
