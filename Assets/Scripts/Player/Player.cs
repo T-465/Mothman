@@ -14,10 +14,12 @@ public class Player : MonoBehaviour, IDamageable
 
     public PlayerInput playerinput;
 
+    public GameOver gameOver;
 
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
+
     }
     private void Update()
     {
@@ -36,17 +38,15 @@ public class Player : MonoBehaviour, IDamageable
 
         #endregion
 
-        #region Damage
-
-        #endregion
     }
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
         if (playerHealth <= 0)
         {
-            Destroy(gameObject); // Destroy crate when health reaches 0
+            gameOver.OnGameOver();
         }
+
     }
     public void ShowHitEffect()
     {
