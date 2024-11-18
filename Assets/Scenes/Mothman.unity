@@ -647,7 +647,8 @@ PrefabInstance:
       propertyPath: timeBetweenAtacks
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -675,6 +676,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1552700474}
+    - targetCorrespondingSourceObject: {fileID: 516192091743312017, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1552700481}
   m_SourcePrefab: {fileID: 100100000, guid: 8a0bf3621229edf478d6d28c16fa825d, type: 3}
 --- !u!1 &229541676
 GameObject:
@@ -812,7 +817,7 @@ CharacterController:
   m_SlopeLimit: 100
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0
+  m_MinMoveDistance: 0.01
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &229541683
 MonoBehaviour:
@@ -5670,6 +5675,57 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!195 &1552700478 stripped
+NavMeshAgent:
+  m_CorrespondingSourceObject: {fileID: 493285699609103306, guid: 8a0bf3621229edf478d6d28c16fa825d,
+    type: 3}
+  m_PrefabInstance: {fileID: 206271475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1552700480 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 407483039390763418, guid: 8a0bf3621229edf478d6d28c16fa825d,
+    type: 3}
+  m_PrefabInstance: {fileID: 206271475}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1552700481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1552700459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50bce76073d7fbb4a822151b8fd8180d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 1552700478}
+  damage: 1
+  player: {fileID: 229541680}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 8
+  whatIsPlayer:
+    serializedVersion: 2
+    m_Bits: 64
+  flashlight: {fileID: 229541685}
+  playerScript: {fileID: 229541684}
+  playerDead: 0
+  jumpScareImg: {fileID: 296335090}
+  vol: {fileID: 832575518}
+  currentChromaticAb: 0.43
+  targetChromaticAb: 1
+  teleporting: 0
+  teleportcoroutinework: 0
+  mothMan: {fileID: 1552700480}
+  Tele1: {fileID: 0}
+  Tele2: {fileID: 0}
+  Tele3: {fileID: 0}
+  Tele4: {fileID: 0}
+  timeBetweenAtacks: 0
+  distance: 0
+  attackRange: 0
+  playerInAttackRange: 0
 --- !u!1 &1604372609
 GameObject:
   m_ObjectHideFlags: 0

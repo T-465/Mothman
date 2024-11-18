@@ -11,16 +11,20 @@ public class EnemyState_Chase : IEnemyState
     }
     public void Update(Mothman moth)
     {
-        Debug.Log("Moving");
+        Debug.Log("Chasing");
         moth.agent.speed = 25;
 
      
         moth.transform.LookAt(moth.player);
         moth.agent.SetDestination(moth.player.position);
 
-        if (Vector3.Distance(moth.transform.position, moth.player.position) > moth.attackRange)
+        if (Vector3.Distance(moth.transform.position, moth.player.position) > moth.attackRange && moth.flashlight.flashlighton == true)
         {
             moth.SetState(new EnemyState_Tele());
+        }
+        else if (Vector3.Distance(moth.transform.position, moth.player.position) < moth.attackRange && moth.flashlight.flashlighton == false)
+        {
+            moth.SetState(new EnemyState_Attack());
         }
     }
     public void Exit(Mothman moth)

@@ -52,15 +52,53 @@ public class Mothman : MonoBehaviour
     //States
     public float attackRange;
     public bool playerInAttackRange;
+    private void Awake()
+    {
+        player = GameObject.Find("Player").transform;
+        agent = GetComponent<NavMeshAgent>();
+        jumpScareImg.enabled = false;
+        IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
 
+        Tele1 = null;
+        Tele2 = null;
+        Tele3 = null;
+        Tele4 = null;
+    }
     private void Start()
     {
+
         SetState(new EnemyState_Tele());
         Invoke("LocatePlayer", 1f);
+    }
+    private void OnEnable()
+    {
+        Tele1 = GameObject.FindWithTag("Tele1").transform;
+        Tele2 = GameObject.FindWithTag("Tele2").transform;
+        Tele3 = GameObject.FindWithTag("Tele3").transform;
+        Tele4 = GameObject.FindWithTag("Tele4").transform;
+
+    }
+    private void OnDisable()
+    {
+        Tele1 = null;
+        Tele2 = null;
+        Tele3 = null;
+        Tele4 = null;
     }
     private void Update()
     {
         currentState?.Update(this);
+        if (Tele1 == null)
+            Tele1 = GameObject.FindWithTag("Tele1").transform;
+
+        if (Tele2 == null)
+            Tele2 = GameObject.FindWithTag("Tele2").transform;
+
+        if (Tele3 == null)
+            Tele3 = GameObject.FindWithTag("Tele3").transform;
+
+        if (Tele4 == null)
+            Tele4 = GameObject.FindWithTag("Tele4").transform;
     }
     public void SetState(IEnemyState newState)
     {
@@ -70,7 +108,7 @@ public class Mothman : MonoBehaviour
     }
     public string GetCurrentStateName()
     {
-        return currentState != null ? currentState.GetType().Name.Replace("Enemy", "") : "No State";
+        return currentState != null ? currentState.GetType().Name.Replace("Moth", "") : "No State";
     }
     // ... (Other methods remain unchanged, including TakeDamage and Die)
     private void LocatePlayer()
