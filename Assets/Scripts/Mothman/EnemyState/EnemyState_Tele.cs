@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class EnemyState_Tele : IEnemyState
 {
-
+    public Mothman moth;
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Tele State");
-        moth.teleporting = true;
+
     }
     public void Update(Mothman moth)
     {
         moth.transform.LookAt(moth.player);
         moth.agent.speed = 0.5f;
 
-        if (moth.teleporting && moth.teleportcoroutinework == false)
+        if (moth.teleporting && moth.teleportcoroutinework!)
         {
             moth.StartCoroutine(Teleporter());
         }

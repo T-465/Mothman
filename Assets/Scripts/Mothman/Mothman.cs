@@ -118,4 +118,5 @@ public class Mothman : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
+
 }

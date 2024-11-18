@@ -863,7 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
-  speed: 480
+  speed: 250
   cc: {fileID: 229541682}
   playerinput: {fileID: 229541683}
   gameOver: {fileID: 1637885863}
@@ -5722,7 +5722,7 @@ MonoBehaviour:
   Tele2: {fileID: 0}
   Tele3: {fileID: 0}
   Tele4: {fileID: 0}
-  timeBetweenAtacks: 0
+  timeBetweenAtacks: 1
   distance: 0
   attackRange: 0
   playerInAttackRange: 0
