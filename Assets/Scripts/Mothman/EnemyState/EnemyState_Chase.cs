@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyState_Chase : MonoBehaviour, IEnemyState
+public class EnemyState_Chase :  IEnemyState
 {
     public void Enter(Mothman moth)
     {

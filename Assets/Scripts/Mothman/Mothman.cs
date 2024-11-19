@@ -30,7 +30,6 @@ public class Mothman : MonoBehaviour
     #endregion
 
     #region Teleporting
-    public bool teleporting;
     public bool teleportcoroutinework;
     public Transform mothMan;
     public Transform Tele1;
@@ -118,5 +117,38 @@ public class Mothman : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
+   public void StartJumpscare()
+    {
+        StartCoroutine(Jumpscare());
+    }
+    public void StartTeleport()
+    {
+        StartCoroutine(Teleporter());
+    }
+    IEnumerator Jumpscare()
+    {
+        IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
+        damageable.TakeDamage(damage);
+        damageable.ShowHitEffect();
+        jumpScareImg.enabled = true;
+        yield return new WaitForSeconds(1);
+        jumpScareImg.enabled = false;
+    }
+    IEnumerator Teleporter()
+    {
+        teleportcoroutinework = true;
 
+        transform.position = Tele1.transform.position;
+
+        yield return new WaitForSeconds(3f);
+        transform.position = Tele2.transform.position;
+
+        yield return new WaitForSeconds(4f);
+        transform.position = Tele3.transform.position;
+
+        yield return new WaitForSeconds(4f);
+        transform.position = Tele4.transform.position;
+        yield return new WaitForSeconds(3f);
+       teleportcoroutinework = false;
+    }
 }
