@@ -98,6 +98,9 @@ public class Mothman : MonoBehaviour
 
         if (Tele4 == null)
             Tele4 = GameObject.FindWithTag("Tele4").transform;
+
+        playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
+
     }
     public void SetState(IEnemyState newState)
     {

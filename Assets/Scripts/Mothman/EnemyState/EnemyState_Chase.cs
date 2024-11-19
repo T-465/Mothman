@@ -22,7 +22,8 @@ public class EnemyState_Chase :  IEnemyState
         {
             moth.SetState(new EnemyState_Tele());
         }
-        else if (Vector3.Distance(moth.transform.position, moth.player.position) < moth.attackRange && moth.flashlight.flashlighton == false)
+
+        if (moth.playerInAttackRange && moth.flashlight.flashlighton == false)
         {
             moth.StopTeleport();
             moth.SetState(new EnemyState_Attack());
