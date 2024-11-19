@@ -121,9 +121,14 @@ public class Mothman : MonoBehaviour
     {
         StartCoroutine(Jumpscare());
     }
+
     public void StartTeleport()
     {
         StartCoroutine(Teleporter());
+    }
+    public void StopTeleport()
+    {
+        StopCoroutine(Teleporter());
     }
     IEnumerator Jumpscare()
     {
