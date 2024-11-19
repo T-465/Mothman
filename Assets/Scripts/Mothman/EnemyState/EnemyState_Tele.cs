@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState_Tele : IEnemyState
+public class EnemyState_Tele : MonoBehaviour, IEnemyState
 {
-    public Mothman moth;
+    Mothman moth;
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Tele State");
 
     }
-    public void Update(Mothman moth)
+    void Test(Mothman moth)
+    {
+        moth = moth;
+    }
+    public void Update()
     {
         moth.transform.LookAt(moth.player);
         moth.agent.speed = 0.5f;
 
         if (moth.teleporting && moth.teleportcoroutinework!)
         {
-            moth.StartCoroutine(Teleporter());
+            StartCoroutine(Teleporter());
         }
         if (moth.player == null) return;
         if (Vector3.Distance(moth.transform.position, moth.player.position) < moth.attackRange && moth.flashlight.flashlighton == true)

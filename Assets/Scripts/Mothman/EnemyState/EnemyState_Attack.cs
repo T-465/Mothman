@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyState_Attack : IEnemyState
+public class EnemyState_Attack :MonoBehaviour, IEnemyState
 {
     Mothman moth;
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Attack State");
-        moth.StartCoroutine(Jumpscare());
+        StartCoroutine(Jumpscare());
+     
     }
     public void Update(Mothman moth)
     {
@@ -22,7 +23,7 @@ public class EnemyState_Attack : IEnemyState
     {
         Debug.Log("Exiting Attack State");
     }
-    IEnumerator Jumpscare()
+     IEnumerator Jumpscare()
     {
         IDamageable damageable = moth.player.gameObject.GetComponent<IDamageable>();
         damageable.TakeDamage(moth.damage);
@@ -31,4 +32,5 @@ public class EnemyState_Attack : IEnemyState
         yield return new WaitForSeconds(1);
         moth.jumpScareImg.enabled = false;
     }
+
 }
