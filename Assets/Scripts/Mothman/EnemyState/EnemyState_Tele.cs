@@ -12,6 +12,7 @@ public class EnemyState_Tele : IEnemyState
 
     public void Update(Mothman moth)
     {
+        moth.teleporting = true;
         moth.transform.LookAt(moth.player);
         moth.agent.speed = 0.5f;
 

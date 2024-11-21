@@ -14,6 +14,7 @@ public class EnemyState_Attack : IEnemyState
 
     public void Update(Mothman moth)
     {
+        moth.teleporting = false;
         Debug.Log("Attacking");
         if (moth.jumpScareImg.enabled ==false)
         {

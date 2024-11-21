@@ -11,6 +11,7 @@ public class EnemyState_Chase :  IEnemyState
     }
     public void Update(Mothman moth)
     {
+        moth.teleporting = false;
         Debug.Log("Chasing");
         moth.agent.speed = 25;
 

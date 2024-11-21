@@ -5,6 +5,7 @@ using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
+using UnityEditor.Experimental.GraphView;
 
 
 public class Mothman : MonoBehaviour
@@ -31,6 +32,7 @@ public class Mothman : MonoBehaviour
 
     #region Teleporting
     public bool teleportcoroutinework;
+    public bool teleporting;
     public Transform mothMan;
     public Transform Tele1;
     public Transform Tele2;
@@ -150,15 +152,19 @@ public class Mothman : MonoBehaviour
         transform.position = Tele1.transform.position;
 
         yield return new WaitForSeconds(3f);
-        
+        yield return new WaitUntil(() => teleporting == true);
+    
         transform.position = Tele2.transform.position;
 
         yield return new WaitForSeconds(4f);
+        yield return new WaitUntil(() => teleporting == true);
         transform.position = Tele3.transform.position;
 
         yield return new WaitForSeconds(4f);
+        yield return new WaitUntil(() => teleporting == true);
         transform.position = Tele4.transform.position;
         yield return new WaitForSeconds(3f);
-       teleportcoroutinework = false;
+        yield return new WaitUntil(() => teleporting == true);
+        teleportcoroutinework = false;
     }
 }
