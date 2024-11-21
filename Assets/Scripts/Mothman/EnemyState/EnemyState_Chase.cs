@@ -23,7 +23,7 @@ public class EnemyState_Chase :  IEnemyState
             moth.SetState(new EnemyState_Tele());
         }
 
-        if (moth.playerInAttackRange && moth.flashlight.flashlighton == false)
+        if (moth.playerInAttackRange)
         {
             moth.StopTeleport();
             moth.SetState(new EnemyState_Attack());

@@ -10,10 +10,11 @@ public class GameOver : MonoBehaviour
     public GameObject globalVol;
     public GameObject flashlight;
     public GameObject mothman;
-
+    public GameObject player;
     private void Start()
     {
         Cursor.visible = false;
+        
     }
     public void OnGameOver()
    {
@@ -21,6 +22,7 @@ public class GameOver : MonoBehaviour
         gameOver.SetActive(true);
         flashlight.SetActive(false);
         mothman.SetActive(false);
+        player.SetActive(false);
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
