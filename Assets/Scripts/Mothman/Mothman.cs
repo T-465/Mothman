@@ -128,6 +128,7 @@ public class Mothman : MonoBehaviour
     public void StartTeleport()
     {
         StartCoroutine(Teleporter());
+        
     }
     public void StopTeleport()
     {
@@ -149,6 +150,7 @@ public class Mothman : MonoBehaviour
         transform.position = Tele1.transform.position;
 
         yield return new WaitForSeconds(3f);
+        
         transform.position = Tele2.transform.position;
 
         yield return new WaitForSeconds(4f);

@@ -26,6 +26,7 @@ public class EnemyState_Chase :  IEnemyState
         if (moth.playerInAttackRange)
         {
             moth.StopTeleport();
+            
             moth.SetState(new EnemyState_Attack());
         }
     }
