@@ -49,6 +49,7 @@ public class Mothman : MonoBehaviour
     public float timeBetweenAtacks;
     bool alreadyAttacked;
     public float distance;
+    public bool jumpscaring;
 
     //States
     public float attackRange;
@@ -138,12 +139,15 @@ public class Mothman : MonoBehaviour
     }
     IEnumerator Jumpscare()
     {
+        jumpscaring = true;
+        SetState(new EnemyState_Tele());
+        jumpScareImg.enabled = true;
         IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
         damageable.TakeDamage(damage);
         damageable.ShowHitEffect();
-        jumpScareImg.enabled = true;
         yield return new WaitForSeconds(1);
         jumpScareImg.enabled = false;
+        jumpscaring = false;
     }
     IEnumerator Teleporter()
     {

@@ -13,7 +13,7 @@ public class EnemyState_Chase :  IEnemyState
     {
         moth.teleporting = false;
         Debug.Log("Chasing");
-        moth.agent.speed = 25;
+        moth.agent.speed = 30;
 
      
         moth.transform.LookAt(moth.player);
@@ -24,11 +24,10 @@ public class EnemyState_Chase :  IEnemyState
             moth.SetState(new EnemyState_Tele());
         }
 
-        if (moth.playerInAttackRange)
+        if (moth.playerInAttackRange == true && moth.jumpscaring == false)
         {
-            moth.StopTeleport();
-            
             moth.SetState(new EnemyState_Attack());
+
         }
     }
     public void Exit(Mothman moth)
