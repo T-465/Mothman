@@ -78,10 +78,15 @@ public class Mothman : MonoBehaviour
         Tele2 = GameObject.FindWithTag("Tele2").transform;
         Tele3 = GameObject.FindWithTag("Tele3").transform;
         Tele4 = GameObject.FindWithTag("Tele4").transform;
+        SetState(new EnemyState_Tele());
 
     }
     private void OnDisable()
     {
+        teleportcoroutinework = false;
+        teleporting = false;
+        jumpscaring = false;
+
         Tele1 = null;
         Tele2 = null;
         Tele3 = null;

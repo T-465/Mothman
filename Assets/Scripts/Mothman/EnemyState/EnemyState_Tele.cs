@@ -21,7 +21,7 @@ public class EnemyState_Tele : IEnemyState
             moth.StartTeleport();
         }
         if (moth.player == null) return;
-        if (moth.flashlight.flashlighton == true)
+        if (moth.flashlight.flashlighton == true && moth.jumpscaring == false)
         {
             moth.SetState(new EnemyState_Chase());
         }

@@ -647,8 +647,7 @@ PrefabInstance:
       propertyPath: timeBetweenAtacks
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 1805395998050317854, guid: 8a0bf3621229edf478d6d28c16fa825d, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -5724,6 +5723,7 @@ MonoBehaviour:
   Tele4: {fileID: 0}
   timeBetweenAtacks: 1
   distance: 0
+  jumpscaring: 0
   attackRange: 0
   playerInAttackRange: 0
 --- !u!1 &1604372609

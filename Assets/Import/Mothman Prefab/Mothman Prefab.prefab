@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 407483039390763418}
-  - component: {fileID: 1805395998050317854}
   - component: {fileID: 493285699609103306}
   - component: {fileID: 1759963127454245814}
   - component: {fileID: 517270651285887134}
@@ -37,43 +36,6 @@ Transform:
   - {fileID: 1190549912105638789}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1805395998050317854
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 516192091743312017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 16539f8852598f24e881fbda45bf7ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 493285699609103306}
-  player: {fileID: 0}
-  whatIsGround:
-    serializedVersion: 2
-    m_Bits: 8
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 64
-  flashlight: {fileID: 0}
-  playerScript: {fileID: 0}
-  playerDead: 0
-  jumpScareImg: {fileID: 0}
-  vol: {fileID: 0}
-  currentChromaticAb: 0.43
-  targetChromaticAb: 1
-  teleporting: 0
-  teleportcoroutinework: 0
-  mothMan: {fileID: 407483039390763418}
-  Tele1: {fileID: 0}
-  Tele2: {fileID: 0}
-  Tele3: {fileID: 0}
-  Tele4: {fileID: 0}
-  timeBetweenAtacks: 7
-  attackRange: 10
-  playerInAttackRange: 0
 --- !u!195 &493285699609103306
 NavMeshAgent:
   m_ObjectHideFlags: 0
