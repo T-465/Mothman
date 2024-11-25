@@ -7,7 +7,7 @@ public class EnemyState_Tele : IEnemyState
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Tele State");
-        moth.trigColl.enabled = false;
+
     }
 
     public void Update(Mothman moth)

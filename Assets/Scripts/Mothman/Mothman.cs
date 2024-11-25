@@ -60,13 +60,11 @@ public class Mothman : MonoBehaviour
     
     public float attackRange;
     public bool playerInAttackRange;
-    public bool playerInWarningRange;
-    public Collider trigColl;
+
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
-       
-        trigColl = GetComponent<Collider>();
+
         agent = GetComponent<NavMeshAgent>();
         jumpScareImg.enabled = false;
         IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
@@ -158,7 +156,14 @@ public class Mothman : MonoBehaviour
     {
         StopCoroutine(Teleporter());
     }
-    
+    public void StartWarningSound()
+    {
+        StartCoroutine(WarningSound());
+    }
+    public void StopWarningSound()
+    {
+        StopCoroutine(WarningSound());
+    }
     IEnumerator Jumpscare()
     {
         Debug.Log("playsounds");
@@ -210,19 +215,12 @@ public class Mothman : MonoBehaviour
         yield return new WaitForSeconds(7f);
         yield return new WaitUntil(() => teleporting == true);
     }
-    public void OnTriggerEnter(Collider other)
-    { 
-        Debug.Log("Explain yourself");
-        if (other == GameObject.FindWithTag("Player"))
-        {
-            playerInWarningRange = true;
-        }
-    }
-    public void OnTriggerExit(Collider other)
+    IEnumerator WarningSound()
     {
-        if (other == GameObject.FindWithTag("Player"))
-        {
-            playerInWarningRange = false;
-        }
+        yield return new WaitForSeconds(5f);
+        yield return new WaitUntil(() => teleporting == false && jumpscaring == false);
+        MothAttack.Play();
+        MothAttack2.Play();
+
     }
 }

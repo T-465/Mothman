@@ -8,8 +8,7 @@ public class EnemyState_Chase :  IEnemyState
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Chase State");
-
-        moth.trigColl.enabled = true;
+        moth.StartWarningSound();
     }
     public void Update(Mothman moth)
     {
@@ -32,16 +31,11 @@ public class EnemyState_Chase :  IEnemyState
             moth.SetState(new EnemyState_Attack());
 
         }
-        if (moth.playerInWarningRange == true && moth.jumpscaring == false)
-        {
-            Debug.Log("playwarningsounds");
-           
-            moth.MothAttack.Play();
-            moth.MothAttack2.Play();
-        }
+       
     }
     public void Exit(Mothman moth)
     {
+        moth.StopWarningSound();
         Debug.Log("Exiting Chase State");
     }
 }
