@@ -16,6 +16,7 @@ public class Mothman : MonoBehaviour
     private IEnemyState currentState;
     public Transform player;
 
+
     public LayerMask whatIsGround, whatIsPlayer;
 
     public Flashlight flashlight;
@@ -41,22 +42,31 @@ public class Mothman : MonoBehaviour
     #endregion
 
     #region Audio
-
+    public AudioSource MothAttack;
+    public AudioSource MothAttack2;
+    public AudioSource MothDirectional;
+    public AudioSource MothDirectional2;
+    public AudioSource Jumpscare1;
+    public AudioSource Jumpscare2;
     #endregion
 
 
     //Attacking
     public float timeBetweenAtacks;
     bool alreadyAttacked;
-    public float distance;
+    
     public bool jumpscaring;
 
-    //States
+    
     public float attackRange;
     public bool playerInAttackRange;
+    public bool playerInWarningRange;
+    public Collider trigColl;
     private void Awake()
     {
         player = GameObject.Find("Player").transform;
+       
+        trigColl = GetComponent<Collider>();
         agent = GetComponent<NavMeshAgent>();
         jumpScareImg.enabled = false;
         IDamageable damageable = player.gameObject.GetComponent<IDamageable>();
@@ -92,6 +102,12 @@ public class Mothman : MonoBehaviour
         Tele3 = null;
         Tele4 = null;
     }
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, attackRange);
+        
+    }
     private void Update()
     {
         currentState?.Update(this);
@@ -108,7 +124,7 @@ public class Mothman : MonoBehaviour
             Tele4 = GameObject.FindWithTag("Tele4").transform;
 
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-
+        
     }
     public void SetState(IEnemyState newState)
     {
@@ -120,7 +136,7 @@ public class Mothman : MonoBehaviour
     {
         return currentState != null ? currentState.GetType().Name.Replace("Moth", "") : "No State";
     }
-    // ... (Other methods remain unchanged, including TakeDamage and Die)
+   
     private void LocatePlayer()
     {
         if (player == null)
@@ -136,14 +152,18 @@ public class Mothman : MonoBehaviour
     public void StartTeleport()
     {
         StartCoroutine(Teleporter());
-        
+        StartCoroutine(TeleSounds());
     }
     public void StopTeleport()
     {
         StopCoroutine(Teleporter());
     }
+    
     IEnumerator Jumpscare()
     {
+        Debug.Log("playsounds");
+        Jumpscare1.Play();
+        Jumpscare2.Play();
         jumpscaring = true;
         SetState(new EnemyState_Tele());
         jumpScareImg.enabled = true;
@@ -175,5 +195,34 @@ public class Mothman : MonoBehaviour
         yield return new WaitForSeconds(3f);
         yield return new WaitUntil(() => teleporting == true);
         teleportcoroutinework = false;
+    }
+    IEnumerator TeleSounds()
+    {
+        yield return new WaitForSeconds(3f);
+        yield return new WaitUntil(() => teleporting == true);
+        Debug.Log("playtelesound1");
+            MothDirectional.Play();
+        yield return new WaitForSeconds(5f);
+        yield return new WaitUntil(() => teleporting == true);
+        Debug.Log("playtelesound2");
+            MothDirectional2.Play();
+        
+        yield return new WaitForSeconds(7f);
+        yield return new WaitUntil(() => teleporting == true);
+    }
+    public void OnTriggerEnter(Collider other)
+    { 
+        Debug.Log("Explain yourself");
+        if (other == GameObject.FindWithTag("Player"))
+        {
+            playerInWarningRange = true;
+        }
+    }
+    public void OnTriggerExit(Collider other)
+    {
+        if (other == GameObject.FindWithTag("Player"))
+        {
+            playerInWarningRange = false;
+        }
     }
 }
