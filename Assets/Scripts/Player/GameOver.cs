@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem;
 
 public class GameOver : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class GameOver : MonoBehaviour
     private void Start()
     {
         Cursor.visible = false;
+        
     }
     public void OnGameOver()
    {
@@ -21,6 +23,7 @@ public class GameOver : MonoBehaviour
         gameOver.SetActive(true);
         flashlight.SetActive(false);
         mothman.SetActive(false);
+      
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
     }
