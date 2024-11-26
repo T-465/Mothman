@@ -8,7 +8,10 @@ public class EnemyState_Chase :  IEnemyState
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Chase State");
-        moth.StartWarningSound();
+        if (moth.playerScript.playerHealth == 1)
+        {
+            moth.StartWarningSound();
+        }
     }
     public void Update(Mothman moth)
     {

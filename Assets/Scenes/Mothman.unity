@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 3
-  speed: 255
+  speed: 260
   cc: {fileID: 229541682}
   playerinput: {fileID: 229541683}
   gameOver: {fileID: 1637885863}

@@ -21,7 +21,6 @@ public class Mothman : MonoBehaviour
 
     public Flashlight flashlight;
     public Player playerScript;
-    public bool playerDead;
     public Image jumpScareImg;
 
     #region GlobalVolume
@@ -142,7 +141,9 @@ public class Mothman : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
     }
-   public void StartJumpscare()
+
+    #region Start/Stop Methods
+    public void StartJumpscare()
     {
         StartCoroutine(Jumpscare());
     }
@@ -164,6 +165,9 @@ public class Mothman : MonoBehaviour
     {
         StopCoroutine(WarningSound());
     }
+    #endregion
+
+    #region Ienumerators
     IEnumerator Jumpscare()
     {
         Debug.Log("playsounds");
@@ -218,9 +222,10 @@ public class Mothman : MonoBehaviour
     IEnumerator WarningSound()
     {
         yield return new WaitForSeconds(5f);
-        yield return new WaitUntil(() => teleporting == false && jumpscaring == false);
+        yield return new WaitUntil(() => teleporting == false && jumpscaring == false && playerScript.playerHealth == 1);
         MothAttack.Play();
         MothAttack2.Play();
 
     }
+#endregion
 }
