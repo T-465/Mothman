@@ -14,7 +14,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public PlayerInput playerinput;
 
-    public GameOver gameOver;
+    public UIGameEnds uiGameEnds;
 
     private void Awake()
     {
@@ -44,7 +44,7 @@ public class Player : MonoBehaviour, IDamageable
         playerHealth -= damage;
         if (playerHealth <= 0)
         {
-            gameOver.OnGameOver();
+            uiGameEnds.OnGameOver();
         }
 
     }

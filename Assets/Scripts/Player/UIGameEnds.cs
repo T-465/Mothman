@@ -5,17 +5,19 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
-public class GameOver : MonoBehaviour
+public class UIGameEnds : MonoBehaviour
 {
     public GameObject gameOver;
     public GameObject globalVol;
     public GameObject flashlight;
     public GameObject mothman;
+    public GameObject player;
+    public GameObject endScreen;
 
     private void Start()
     {
         Cursor.visible = false;
-        
+        player = GameObject.FindWithTag("Player");
     }
     public void OnGameOver()
    {
@@ -32,4 +34,15 @@ public class GameOver : MonoBehaviour
   {
         SceneManager.LoadScene("Mothman");
   }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other == player)
+        {
+            endScreen.SetActive(true);
+            flashlight.SetActive(false);
+            mothman.SetActive(false);
+        }
+    }
 }
