@@ -21,7 +21,7 @@ public class Player : MonoBehaviour, IDamageable
         cc = GetComponent<CharacterController>();
 
     }
-    private void Update()
+    private void FixedUpdate()
     {
         #region PlayerMove
 
