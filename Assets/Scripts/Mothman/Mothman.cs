@@ -41,8 +41,6 @@ public class Mothman : MonoBehaviour
     #endregion
 
     #region Audio
-    public AudioSource MothAttack;
-    public AudioSource MothAttack2;
     public AudioSource MothDirectional;
     public AudioSource MothDirectional2;
     public AudioSource Jumpscare1;
@@ -157,14 +155,7 @@ public class Mothman : MonoBehaviour
     {
         StopCoroutine(Teleporter());
     }
-    public void StartWarningSound()
-    {
-        StartCoroutine(WarningSound());
-    }
-    public void StopWarningSound()
-    {
-        StopCoroutine(WarningSound());
-    }
+
     #endregion
 
     #region Ienumerators
@@ -219,13 +210,6 @@ public class Mothman : MonoBehaviour
         yield return new WaitForSeconds(7f);
         yield return new WaitUntil(() => teleporting == true);
     }
-    IEnumerator WarningSound()
-    {
-        yield return new WaitForSeconds(5f);
-        yield return new WaitUntil(() => teleporting == false && jumpscaring == false && playerScript.playerHealth == 1);
-        MothAttack.Play();
-        MothAttack2.Play();
 
-    }
 #endregion
 }
