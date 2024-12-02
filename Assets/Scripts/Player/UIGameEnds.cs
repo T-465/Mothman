@@ -29,9 +29,9 @@ public class UIGameEnds : MonoBehaviour
     }
     public void OnGameOver()
    {
-       //moth1.Play();
+      // moth1.Play();
        //moth2.Play();
-        playerScript.enabled = false;
+       playerScript.enabled = false;
         mouseLook.enabled = false;
         globalVol.SetActive(false);
         gameOver.SetActive(true);
