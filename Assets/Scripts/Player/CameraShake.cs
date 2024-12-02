@@ -7,7 +7,7 @@ public class CameraShake : MonoBehaviour
         public Transform cameraTransform;
         public Vector3 _orignalPosOfCam;
         public float shakeFrequency;
-    public bool shaking;
+        public bool shaking;
 
         // Start is called before the first frame update
         void Start()
@@ -23,21 +23,25 @@ public class CameraShake : MonoBehaviour
         if (!shaking)
         {
             _orignalPosOfCam = cameraTransform.position;
+            StopShake();
         }
-       
+        if (shaking)
+        {
+            CameraShaker();
+           
+        }
     }
 
     public void CameraShaker()
-        {
-        shaking = true;
+    {
             cameraTransform.position = _orignalPosOfCam + Random.insideUnitSphere * shakeFrequency;
-        }
+    }
 
-        public void StopShake()
-        {
-           shaking = false;
-            //Return the camera to it's original position.
-            cameraTransform.position = _orignalPosOfCam;
-        }
+    public void StopShake()
+    {
+      shaking = false;
+      //Return the camera to it's original position.
+      cameraTransform.position = _orignalPosOfCam;
+    }
     
 }
