@@ -10,6 +10,8 @@ using UnityEditor.Experimental.GraphView;
 
 public class Mothman : MonoBehaviour
 {
+    // Base Class for Mothman including variables, enable/disable behaviour and coroutines called from states
+
     public NavMeshAgent agent;
 
     public int damage = 1;
