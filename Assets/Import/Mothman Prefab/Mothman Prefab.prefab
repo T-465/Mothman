@@ -320,7 +320,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 85016ebdeefa36c41a4439d7d114105e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.736
+  m_Volume: 0.77
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -524,7 +524,6 @@ MonoBehaviour:
     m_Bits: 64
   flashlight: {fileID: 0}
   playerScript: {fileID: 0}
-  jumpScareImg: {fileID: 0}
   vol: {fileID: 0}
   currentChromaticAb: 0.43
   targetChromaticAb: 1
@@ -539,10 +538,10 @@ MonoBehaviour:
   MothDirectional2: {fileID: 7131250857958162313}
   Jumpscare1: {fileID: 7467790618629196396}
   Jumpscare2: {fileID: 3466175281199350384}
-  timeBetweenAtacks: 1
   jumpscaring: 0
   attackRange: 8.8
   playerInAttackRange: 0
+  jumpScareImg: {fileID: 0}
 --- !u!1 &680145548403939826
 GameObject:
   m_ObjectHideFlags: 0

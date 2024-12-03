@@ -31,7 +31,14 @@ public class EnemyState_Chase :  IEnemyState
             moth.SetState(new EnemyState_Attack());
 
         }
-       
+       if (moth.playerInWarningRange == true) 
+       { 
+         moth.cameraShake.shaking = true;
+       }
+        else
+        {
+            moth.cameraShake.shaking = false;
+        }
     }
     public void Exit(Mothman moth)
     {

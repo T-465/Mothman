@@ -581,6 +581,11 @@ PrefabInstance:
       objectReference: {fileID: 229541685}
     - target: {fileID: 5589735939930896588, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 330585549}
+    - target: {fileID: 5589735939930896588, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
       propertyPath: jumpScareImg
       value: 
       objectReference: {fileID: 296335090}
@@ -589,10 +594,15 @@ PrefabInstance:
       propertyPath: playerScript
       value: 
       objectReference: {fileID: 229541684}
-    - target: {fileID: 7467790618629196396, guid: 8a0bf3621229edf478d6d28c16fa825d,
+    - target: {fileID: 5589735939930896588, guid: 8a0bf3621229edf478d6d28c16fa825d,
         type: 3}
-      propertyPath: m_Volume
-      value: 0.77
+      propertyPath: warningRange
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5589735939930896588, guid: 8a0bf3621229edf478d6d28c16fa825d,
+        type: 3}
+      propertyPath: playerInWarningRange
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1311,7 +1321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6e9a91a253e7354395caff78b145077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 330585546}
+  cameraTransform: {fileID: 229541680}
   _orignalPosOfCam: {x: 0, y: 0, z: 0}
   shakeFrequency: 0.1
   shaking: 0

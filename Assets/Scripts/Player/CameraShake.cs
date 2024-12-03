@@ -4,24 +4,22 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
-        public Transform cameraTransform;
-        public Vector3 _orignalPosOfCam;
-        public float shakeFrequency;
-        public bool shaking;
+    public Transform cameraTransform;
+    public Vector3 _orignalPosOfCam;
+    public float shakeFrequency;
+    public bool shaking;
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            //When the game starts make sure to assign the origianl possition of the camera, to its current
-            //position, supposedly it is where you want the camera to return after shaking.
-            _orignalPosOfCam = cameraTransform.position;
-        }
 
-    // Update is called once per frame
+    void Start()
+    {
+      _orignalPosOfCam = cameraTransform.position;
+    }
+
     private void Update()
     {
         if (!shaking)
         {
+            //tracks the camera position to reset after shaking
             _orignalPosOfCam = cameraTransform.position;
             StopShake();
         }
@@ -34,7 +32,7 @@ public class CameraShake : MonoBehaviour
 
     public void CameraShaker()
     {
-            cameraTransform.position = _orignalPosOfCam + Random.insideUnitSphere * shakeFrequency;
+        cameraTransform.position = _orignalPosOfCam + Random.insideUnitSphere * shakeFrequency;
     }
 
     public void StopShake()

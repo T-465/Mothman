@@ -21,7 +21,8 @@ public class Mothman : MonoBehaviour
 
     public Flashlight flashlight;
     public Player playerScript;
-    public Image jumpScareImg;
+
+  
 
     #region GlobalVolume
     public Volume vol;
@@ -48,15 +49,15 @@ public class Mothman : MonoBehaviour
     #endregion
 
 
-    //Attacking
-    public float timeBetweenAtacks;
+    //Attacking variables
     bool alreadyAttacked;
-    
     public bool jumpscaring;
-
-    
     public float attackRange;
+    public float warningRange;
     public bool playerInAttackRange;
+    public bool playerInWarningRange;
+    public CameraShake cameraShake;
+    public Image jumpScareImg;
 
     private void Awake()
     {
@@ -101,7 +102,9 @@ public class Mothman : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
-        
+
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, warningRange);
     }
     private void Update()
     {
@@ -119,7 +122,7 @@ public class Mothman : MonoBehaviour
             Tele4 = GameObject.FindWithTag("Tele4").transform;
 
         playerInAttackRange = Physics.CheckSphere(transform.position, attackRange, whatIsPlayer);
-        
+        playerInWarningRange = Physics.CheckSphere(transform.position, warningRange, whatIsPlayer);
     }
     public void SetState(IEnemyState newState)
     {
@@ -161,6 +164,7 @@ public class Mothman : MonoBehaviour
     #region Ienumerators
     IEnumerator Jumpscare()
     {
+     
         Debug.Log("playsounds");
         Jumpscare1.Play();
         Jumpscare2.Play();
