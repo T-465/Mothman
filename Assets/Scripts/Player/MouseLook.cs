@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    // Script allowing the player to control their camera by moving the mouse
+
     public float mouseSensitivity = 1000f;
 
     public Transform playerBody;
-    //public Transform target;
     float xRotation = 0f;
     public Player player;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         float mouseX = Input.GetAxis("MouseX") * mouseSensitivity * Time.deltaTime;

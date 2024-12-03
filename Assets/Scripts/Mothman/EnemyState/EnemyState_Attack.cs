@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyState_Attack : IEnemyState
 {
-
+    // Mothmans attack state that implements a jumpscare, lowers health and begins an attack delay
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Attack State");

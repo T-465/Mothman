@@ -7,6 +7,9 @@ using UnityEngine.InputSystem;
 
 public class UIGameEnds : MonoBehaviour
 {
+    // Script implementing GameOver UI for if the player dies or escapes
+
+
     public GameObject gameOver;
     public GameObject globalVol;
     public GameObject flashlight;
@@ -28,6 +31,7 @@ public class UIGameEnds : MonoBehaviour
     }
     public void OnGameOver()
    {
+        //activate death UI
         playerScript.OnGameOver();
         playerScript.enabled = false;
         mouseLook.enabled = false;
@@ -35,18 +39,19 @@ public class UIGameEnds : MonoBehaviour
         gameOver.SetActive(true);
         flashlight.SetActive(false);
         mothman.SetActive(false);
-
-
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+
     }
 
+    //retry button
   public void Retry()
   {
         SceneManager.LoadScene("Mothman");
   }
 
 
+    // trigger activating win screen at end
     private void OnTriggerEnter(Collider other)
     {
             playerScript.enabled = false;

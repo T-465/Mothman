@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class TeleCollisions : MonoBehaviour
 {
+    // Script that activates/deactivates teleport areas around the map as the player progresses
+
     public GameObject telespots;
     public GameObject mothMan;
     public GameObject player;

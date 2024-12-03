@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class EnemyState_Chase :  IEnemyState
 {
+    // Mothmans Chase state in which he will chase the player if their flashlight is on and will shake the  players camera as it approaches as a warning
+
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Chase State");

@@ -7,16 +7,19 @@ using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    // Script controlling aspects of the player such as movement, health and damage
+
+
     [SerializeField] public int playerHealth = 3;
     [SerializeField] public float speed;
-
     public CharacterController cc;
-
     public PlayerInput playerinput;
 
+   //Damage/Hit Variables
     public UIGameEnds uiGameEnds;
     public AudioSource moth1;
     public AudioSource moth2;
+
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -26,8 +29,6 @@ public class Player : MonoBehaviour, IDamageable
     {
         #region PlayerMove
 
-
-       
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");
 
@@ -40,6 +41,7 @@ public class Player : MonoBehaviour, IDamageable
         #endregion
 
     }
+    #region Damage
     public void TakeDamage(int damage)
     {
         playerHealth -= damage;
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour, IDamageable
     {
        
     }
+    #endregion
 }
 
 

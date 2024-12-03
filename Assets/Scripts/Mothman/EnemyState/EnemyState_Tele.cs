@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyState_Tele : IEnemyState
 {
+    // Mothmans Teleporting state in which it will teleport to specified areas that change as the player progresses through the TeleCollisons script
+
     public void Enter(Mothman moth)
     {
         Debug.Log("Entering Tele State");

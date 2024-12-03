@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class CameraShake : MonoBehaviour
 {
+    // Script implementing the players camera shaking that triggers when in a range of Mothman during the chase state
+
+
     public Transform cameraTransform;
     public Vector3 _orignalPosOfCam;
     public float shakeFrequency;
