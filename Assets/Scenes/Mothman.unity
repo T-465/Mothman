@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 229541680}
   _orignalPosOfCam: {x: 0, y: 0, z: 0}
-  shakeFrequency: 0.1
+  shakeFrequency: 0.5
   shaking: 0
 --- !u!1 &361985521
 GameObject:
