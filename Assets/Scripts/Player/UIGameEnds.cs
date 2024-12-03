@@ -16,8 +16,7 @@ public class UIGameEnds : MonoBehaviour
     public GameObject mainCamera;
     public MouseLook mouseLook;
     public GameObject endScreen;
-    public AudioSource moth1;
-    public AudioSource moth2;
+
 
     private void Start()
     {
@@ -29,9 +28,8 @@ public class UIGameEnds : MonoBehaviour
     }
     public void OnGameOver()
    {
-       //moth1.Play();
-       //moth2.Play();
-       playerScript.enabled = false;
+        playerScript.OnGameOver();
+        playerScript.enabled = false;
         mouseLook.enabled = false;
         globalVol.SetActive(false);
         gameOver.SetActive(true);

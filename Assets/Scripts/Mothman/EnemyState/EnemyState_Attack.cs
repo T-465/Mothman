@@ -24,7 +24,9 @@ public class EnemyState_Attack : IEnemyState
     }
     public void Exit(Mothman moth)
     {
+        moth.StartAttackDelay();
         Debug.Log("Exiting Attack State");
+
     }
 
 

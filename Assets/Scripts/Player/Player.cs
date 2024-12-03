@@ -15,7 +15,8 @@ public class Player : MonoBehaviour, IDamageable
     public PlayerInput playerinput;
 
     public UIGameEnds uiGameEnds;
-
+    public AudioSource moth1;
+    public AudioSource moth2;
     private void Awake()
     {
         cc = GetComponent<CharacterController>();
@@ -47,6 +48,12 @@ public class Player : MonoBehaviour, IDamageable
             uiGameEnds.OnGameOver();
         }
 
+    }
+    public void OnGameOver() 
+    { 
+      moth1.Play();
+      moth2.Play();
+    
     }
     public void ShowHitEffect()
     {

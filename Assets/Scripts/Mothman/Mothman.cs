@@ -58,6 +58,7 @@ public class Mothman : MonoBehaviour
     public bool playerInWarningRange;
     public CameraShake cameraShake;
     public Image jumpScareImg;
+    public bool attackDelayed;
 
     private void Awake()
     {
@@ -158,7 +159,10 @@ public class Mothman : MonoBehaviour
     {
         StopCoroutine(Teleporter());
     }
-
+    public void StartAttackDelay()
+    {
+        StartCoroutine(AttackDelay());
+    }
     #endregion
 
     #region Ienumerators
@@ -214,6 +218,12 @@ public class Mothman : MonoBehaviour
         yield return new WaitForSeconds(7f);
         yield return new WaitUntil(() => teleporting == true);
     }
+    IEnumerator AttackDelay()
+    {
+        attackDelayed = true;
+        yield return new WaitForSeconds(3f);
+        attackDelayed = false;
+    }
 
-#endregion
+    #endregion
 }

@@ -540,8 +540,12 @@ MonoBehaviour:
   Jumpscare2: {fileID: 3466175281199350384}
   jumpscaring: 0
   attackRange: 8.8
+  warningRange: 40
   playerInAttackRange: 0
+  playerInWarningRange: 0
+  cameraShake: {fileID: 0}
   jumpScareImg: {fileID: 0}
+  attackDelayed: 0
 --- !u!1 &680145548403939826
 GameObject:
   m_ObjectHideFlags: 0
