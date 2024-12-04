@@ -172,8 +172,12 @@ public class Mothman : MonoBehaviour
     {
      
         Debug.Log("playsounds");
-        Jumpscare1.Play();
-        Jumpscare2.Play();
+        if (playerScript.playerHealth > 1)
+        {
+            Jumpscare1.Play();
+            Jumpscare2.Play();
+        }
+
         jumpscaring = true;
         SetState(new EnemyState_Tele());
         jumpScareImg.enabled = true;
