@@ -223,8 +223,10 @@ public class Mothman : MonoBehaviour
     IEnumerator AttackDelay()
     {
         attackDelayed = true;
+   
         yield return new WaitForSeconds(3f);
         attackDelayed = false;
+
     }
 
     #endregion

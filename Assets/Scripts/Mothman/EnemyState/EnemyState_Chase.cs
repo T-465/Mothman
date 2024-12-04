@@ -17,11 +17,13 @@ public class EnemyState_Chase :  IEnemyState
         
         moth.teleporting = false;
         Debug.Log("Chasing");
-        moth.agent.speed = 30;
+        moth.agent.speed = 15;
 
     
         moth.transform.LookAt(moth.player);
         moth.agent.SetDestination(moth.player.position);
+
+
 
         if (moth.flashlight.flashlighton == false)
         {
