@@ -24,6 +24,8 @@ public class EnemyState_Tele : IEnemyState
             moth.StartTeleport();
         }
         if (moth.player == null) return;
+
+        // Switch to chase state if the flashlight is on and the attack delay is over
         if (moth.flashlight.flashlighton == true && moth.jumpscaring == false && moth.attackDelayed == false)
         {
             moth.SetState(new EnemyState_Chase());

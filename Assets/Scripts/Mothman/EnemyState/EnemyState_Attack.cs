@@ -16,6 +16,8 @@ public class EnemyState_Attack : IEnemyState
     {
         moth.teleporting = false;
         Debug.Log("Attacking");
+
+        // Switch back to Tele State if the jumpscare is finished
         if (moth.jumpScareImg.enabled ==false)
         {
             moth.SetState(new EnemyState_Tele());

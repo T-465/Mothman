@@ -30,6 +30,7 @@ public class EnemyState_Chase :  IEnemyState
             moth.SetState(new EnemyState_Tele());
         }
 
+        // Switch to Attack state if the player is in the Attack Range 
         if (moth.playerInAttackRange == true && moth.jumpscaring == false)
         {
             moth.SetState(new EnemyState_Attack());

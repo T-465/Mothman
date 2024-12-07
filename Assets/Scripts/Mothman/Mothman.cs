@@ -50,8 +50,7 @@ public class Mothman : MonoBehaviour
     public AudioSource Jumpscare2;
     #endregion
 
-
-    //Attacking variables
+    #region Attacking variables
     bool alreadyAttacked;
     public bool jumpscaring;
     public float attackRange;
@@ -61,6 +60,7 @@ public class Mothman : MonoBehaviour
     public CameraShake cameraShake;
     public Image jumpScareImg;
     public bool attackDelayed;
+#endregion
 
     private void Awake()
     {
@@ -101,14 +101,20 @@ public class Mothman : MonoBehaviour
         Tele3 = null;
         Tele4 = null;
     }
+
+    #region Gizmos
     private void OnDrawGizmosSelected()
     {
+        // Attack Range
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, attackRange);
 
+        // Warning Range 
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, warningRange);
     }
+    #endregion
+
     private void Update()
     {
         currentState?.Update(this);
