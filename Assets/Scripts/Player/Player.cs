@@ -16,7 +16,7 @@ public class Player : MonoBehaviour, IDamageable
     public PlayerInput playerinput;
 
    //Damage/Hit Variables
-    public UIGameEnds uiGameEnds;
+    public UI uiGameEnds;
     public AudioSource moth1;
     public AudioSource moth2;
 
