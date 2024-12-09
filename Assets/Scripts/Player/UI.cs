@@ -78,6 +78,7 @@ public class UI : MonoBehaviour
             endScreen.SetActive(true);
             flashlight.SetActive(false);
             mothman.SetActive(false);
+            globalVol.SetActive(false);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
         
