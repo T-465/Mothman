@@ -16,7 +16,7 @@ public class Player : MonoBehaviour, IDamageable
     public PlayerInput playerinput;
 
    //Damage/Hit Variables
-    public UI uiGameEnds;
+    public UI ui;
     public AudioSource moth1;
     public AudioSource moth2;
 
@@ -47,7 +47,12 @@ public class Player : MonoBehaviour, IDamageable
         playerHealth -= damage;
         if (playerHealth <= 0)
         {
-            uiGameEnds.OnGameOver();
+            ui.OnGameOver();
+            
+        }
+        else if (playerHealth > 0)
+        {
+            ui.OnHit();
         }
 
     }
@@ -59,14 +64,7 @@ public class Player : MonoBehaviour, IDamageable
     }
     public void ShowHitEffect()
     {
-       
+        
     }
     #endregion
 }
-
-
-
-
-
-
-

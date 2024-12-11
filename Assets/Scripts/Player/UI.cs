@@ -21,12 +21,19 @@ public class UI : MonoBehaviour
     public GameObject mainCamera;
     public MouseLook mouseLook;
     public GameObject endScreen;
-    public float aValue = 5f;
+    public float hValue = 5f;
     public CanvasGroup headphoneWarn;
     public GameObject headPhone;
     public bool timerFinished;
+
+    public GameObject blood1;
+    public GameObject blood2;
+    public Animator bloodanim1;
+    public Animator bloodanim2;
+    
     private void Start()
     {
+     
         Cursor.visible = false;
         player = GameObject.FindWithTag("Player");
         mainCamera = GameObject.FindWithTag("MainCamera");
@@ -34,18 +41,26 @@ public class UI : MonoBehaviour
         mouseLook = mainCamera.GetComponent<MouseLook>();
         timerFinished = false;
 
+        //blood effect
+        blood1 = GameObject.FindWithTag("Blood1");
+        blood2 = GameObject.FindWithTag("Blood2");
+        bloodanim1 = blood1.GetComponent<Animator>();
+        bloodanim2 = blood2.GetComponent<Animator>();
+        bloodanim1.SetBool("Hit", false);
+        bloodanim2.SetBool("Hit", false);
+
         StartCoroutine(HeadPhoneTimer());
     }
    private void Update()
    {
-        if (aValue <= 0f)
+        if (hValue <= 0f)
         {
             headPhone.SetActive(false);
         }
         else if (timerFinished == true) 
         {
-            aValue -= Time.deltaTime;
-            headphoneWarn.alpha = aValue;
+            hValue -= Time.deltaTime;
+            headphoneWarn.alpha = hValue;
         }
    }
     public void OnGameOver()
@@ -61,6 +76,10 @@ public class UI : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
 
+    }
+    public void OnHit()
+    {
+        StartCoroutine(BloodTimer());
     }
 
     //retry button
@@ -81,12 +100,23 @@ public class UI : MonoBehaviour
             globalVol.SetActive(false);
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
-        
     }
+
+
+
     IEnumerator HeadPhoneTimer()
     {
         yield return new WaitForSeconds(2);
         timerFinished = true;
+
+    }
+    IEnumerator BloodTimer()
+    {
+        bloodanim1.SetBool("Hit", true);
+        bloodanim2.SetBool("Hit", true);
+        yield return new WaitForSeconds(5f);
+        bloodanim1.SetBool("Hit", false);
+        bloodanim2.SetBool("Hit", false);
 
     }
 }

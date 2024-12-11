@@ -11,6 +11,8 @@ TagManager:
   - TeleArea1
   - TeleSpots
   - Mothman
+  - Blood1
+  - Blood2
   layers:
   - Default
   - TransparentFX
