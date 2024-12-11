@@ -14,13 +14,16 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] public float speed;
     public CharacterController cc;
     public PlayerInput playerinput;
+    public AudioSource breathing;
+    public bool isBreathing;
 
-   //Damage/Hit Variables
+
+    //Damage/Hit Variables
     public UI ui;
     public AudioSource moth1;
     public AudioSource moth2;
 
-    private void Awake()
+    public void Awake()
     {
         cc = GetComponent<CharacterController>();
 
@@ -37,10 +40,32 @@ public class Player : MonoBehaviour, IDamageable
         cc.SimpleMove(move * speed * Time.deltaTime);
 
 
-
         #endregion
 
     }
+
+    private void Update()
+    {
+        // tired breathing when player isnt moving
+        if (Input.anyKey)
+        {
+            isBreathing = false;
+            breathing.Stop();
+        }
+        else if (!isBreathing)
+        {
+            Breath();
+        }
+      
+    }
+    void Breath()
+    {
+        isBreathing = true;
+        Debug.Log("Breathing");
+        breathing.Play();
+
+    }
+
     #region Damage
     public void TakeDamage(int damage)
     {
