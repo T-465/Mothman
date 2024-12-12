@@ -24,14 +24,6 @@ public class Mothman : MonoBehaviour
     public Flashlight flashlight;
     public Player playerScript;
 
-  
-
-    #region GlobalVolume
-    public Volume vol;
-    private ChromaticAberration ca;
-    public float currentChromaticAb = 0.43f;
-    public float targetChromaticAb = 1.0f;
-    #endregion
 
     #region Teleporting
     public bool teleportcoroutinework;
@@ -83,6 +75,7 @@ public class Mothman : MonoBehaviour
     }
     private void OnEnable()
     {
+        // begin teleports when player leaves safezone
         Tele1 = GameObject.FindWithTag("Tele1").transform;
         Tele2 = GameObject.FindWithTag("Tele2").transform;
         Tele3 = GameObject.FindWithTag("Tele3").transform;
@@ -92,6 +85,7 @@ public class Mothman : MonoBehaviour
     }
     private void OnDisable()
     {
+        // reset teleports when player in safezone
         teleportcoroutinework = false;
         teleporting = false;
         jumpscaring = false;

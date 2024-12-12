@@ -25,7 +25,7 @@ public class TeleCollisions : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-
+        //Player enter teleport areas
             Debug.Log("telespots");
             telespots.SetActive(true);
 
@@ -38,6 +38,8 @@ public class TeleCollisions : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
+        //Player in safezone 
+
         tele1 = null;
         tele2 = null;
         tele3 = null;

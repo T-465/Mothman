@@ -49,10 +49,12 @@ public class UI : MonoBehaviour
         bloodanim1.SetBool("Hit", false);
         bloodanim2.SetBool("Hit", false);
 
+        // Fade HeadPhone UI
         StartCoroutine(HeadPhoneTimer());
     }
    private void Update()
    {
+        // Opacity of Headphone UI
         if (hValue <= 0f)
         {
             headPhone.SetActive(false);
@@ -82,7 +84,7 @@ public class UI : MonoBehaviour
         StartCoroutine(BloodTimer());
     }
 
-    //retry button
+  //retry button
   public void Retry()
   {
         SceneManager.LoadScene("Mothman");
@@ -103,13 +105,15 @@ public class UI : MonoBehaviour
     }
 
 
-
+   // Headphone UI Coroutine
     IEnumerator HeadPhoneTimer()
     {
         yield return new WaitForSeconds(2);
         timerFinished = true;
 
     }
+
+    // Blood Effect Coroutine
     IEnumerator BloodTimer()
     {
         bloodanim1.SetBool("Hit", true);

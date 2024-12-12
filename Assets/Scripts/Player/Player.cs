@@ -46,7 +46,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Update()
     {
-        // tired breathing when player isnt moving
+        // Tired breathing when player isnt moving
         if (Input.anyKey)
         {
             isBreathing = false;
@@ -61,7 +61,6 @@ public class Player : MonoBehaviour, IDamageable
     void Breath()
     {
         isBreathing = true;
-        Debug.Log("Breathing");
         breathing.Play();
 
     }

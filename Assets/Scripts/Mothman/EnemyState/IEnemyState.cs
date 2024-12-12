@@ -4,6 +4,8 @@ using UnityEngine;
 
 public interface IEnemyState
 {
+    //Mothman State Interface
+
     void Enter(Mothman moth); // Called when entering the state
 
     void Update(Mothman moth); // Called every frame in this state

@@ -26,6 +26,8 @@ public class Flashlight : MonoBehaviour, ISwitchable
 
     public void Update()
     {
+        #region Flashlight
+        // Check for player input and toggle the flashlight
         if (FlashLight.enabled == true)
         {
             flashlighton = true;
@@ -35,8 +37,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
             flashlighton = false;
         }
 
-        #region Flashlight
-        // Check for player input and toggle the flashlight
+    
         if (countdown >= 15)
         {
             countdown = 15;
@@ -104,6 +105,7 @@ public class Flashlight : MonoBehaviour, ISwitchable
     }
     public void Toggle()
     {
+     // Flashlight sound
       click.Play();
       FlashLight.enabled = !FlashLight.enabled;
     }
